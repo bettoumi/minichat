@@ -1,0 +1,1 @@
+$('#applaction').css('width','400').css('heigth','600').css('backgroudColor','red');
