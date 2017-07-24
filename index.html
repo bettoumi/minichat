@@ -8,8 +8,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <link  rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+       
         <!-- Place favicon.ico in the root directory -->
-         <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet"> 
+         <link  href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet"> 
          <link rel="stylesheet"  href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
@@ -25,32 +27,34 @@
            <!-- =========HTML Mini-CHAT============= -->
 
            <h1>OUAJA-Minichatapp</h1>
-
+          
+                <section id="pseud" class="mb-5">
+                  <textarea id="inpseudo" name=""></textarea>  
+                     <button  id="confirmbtn" class="btn" type="">confirm</button>
+                
+                    </section> 
 
            <!-- section for chat -->
            <section id="applaction">
                <section id="bienvenu">
-                
+                 <!-- <p>bienvenu</p> -->
+                <span  class="ion-close" id="open-close"></span>
                </section>
-               <section id="chat">
+              <div id="chat-sect" >
+                  <section id="chat">
 
-               </section>
-               <section id="message">
+                 </section>
+                     <section id="message">
                    
-                     <input type="text" name="" value="" placeholder="message">  
+                         <textarea  id="message-user"  onKeyPress="sendmessage(event)" ></textarea>  
                    
-                   <button class="sedbtn btn">send</button>
-               </section>
-               
+                          <button  id="sendbtn" class="sedbtn btn">send</button>
+                     </section>
+             </div>  
            </section>
 
            <!-- section for pseudonym -->
-            <section id="pseud">
-                <input id="inpseudo" type="text" name=""  placeholder="ton pseudo">
-                <button  id="confirmbtn" class="btn" type="">confirm</button>
-                
-            </section> 
-
+            
 
 
 

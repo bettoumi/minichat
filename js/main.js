@@ -1,48 +1,94 @@
-$('#applaction').css({
-            
-            "background-color": "rgb(17,146,255)",
-            "font-family": "Josefin Sans",
-            "font-size": "20px",
-             "width" :"500px",
-            "height":"450px",
-            "margin":"auto",
-             "border":"1px solid transparent",
-            "border-radius": "3px"
-        });
 
-$('#pseud').css({
-            
-            "background-color": "rgb(17,146,255)",
-            "font-family": "Josefin Sans",
-            "font-size": "20px",
-            "padding":"5px",
-            "width" :"500px",
-            "height":"50px",
-            "margin":"auto",
-            "border-top":"3px solidrgb(230,230,230)",
-            "border-radius": "3px"
-        });
+ var pseudoname;
+ var messageuser;
+ var messagerobot=["bonjour", "oui cava hmd", "robo","tunisie", "il fait chaud", "je vais chaque jours à la plage"];
+
+  $('#confirmbtn').on('click', function(){
+                     
+                                  
+                      //    $('#inpseudo').css({
+                      //      "font-size":"18px",
+                      //      "color":"rgb(251,149,0)",
+                      //      "font-weight":"bold"
+                      // });
+                     
+                        pseudoname=$('#inpseudo').val();
+                       console.log(pseudoname);
+                     // pseudoname.replaceWith('<Strong>' +  pseudoname + '</Strong>'); 
+                    // pseudoname.wrap('<strong></strong>')
+                       pseudoname= pseudoname+":";
+                       $('#inpseudo').val("");
+
+					});
+	
+	
+ var comptemessage=0;
+	// send messages
+	$('#sendbtn').on('click', function(){
+
+                      messageuser=$('#message-user').val();
+                      messageuser=messageuser.replace(":)","<img src='../img/smile/icon_smile.gif'>");
+                      $('#message-user').val("");
+                     if( $('#chat').text()==="")
+                      {
+                      	$('#chat').text(pseudoname+messageuser);
+                      }
+                      else{
+
+                        $('#chat').append("<br>"+pseudoname+messageuser);
+                      }
+                      if(comptemessage==messagerobot.length)
+                      	{ comptemessage=0; }
+                      else
+                      {
+                        var reponserobot=messagerobot[comptemessage];
+
+                         $('#chat').append("<br>"+"robot:"+reponserobot);
+                         comptemessage++;
+                      }
+                      
+
+					});
+// code for keypressed
+function sendmessage(event)
+{
+  if (event.keyCode == 13)
+ {
+ 	  messageuser=$('#message-user').val();
+                      messageuser=messageuser.replace(":)","<img src='../img/smile/icon_smile.gif'>");
+                      $('#message-user').val("");
+                     if( $('#chat').text()==="")
+                      {
+                      	$('#chat').text(pseudoname+messageuser);
+                      }
+                      else{
+
+                        $('#chat').append("<br>"+pseudoname+messageuser);
+                      }
+                      if(comptemessage==messagerobot.length)
+                      	{ comptemessage=0; }
+                      else
+                      {
+                        var reponserobot=messagerobot[comptemessage];
+
+                         $('#chat').delay(2000).append("<br>"+"robot:"+reponserobot);
+                         comptemessage++;
+                      }
+ }
+                      
 
 
-$('#bienvenu').css({  
-               "width" :"500px",
-               "height":"50px",
-               "border-bottom":"3px solid rgb(230,230,230)" 
-              
-	});
-$('#chat').css({  
-               "width" :"500px",
-               "height":"355px",
-               "overflow":"scroll"
-               //"border-top":"1px solid rgb(155,155,155)"  
-	});
+ 
+}
 
 
-$('#message').css({  
-               
-                 "height":"45px",
-                 "border-top":"1px solid rgb(155,155,155)",
-               
-	         });
-               
-	//    
+
+  // $('#open-close').on('click', function(){
+  // 	                      $("#chatw").text("") ;  
+  // 					   $("#chat-sect").slideToggle()
+
+  // 	              });
+  
+  //console.log('#chat');
+  //  pseudoname="";
+  // messageuser="";
